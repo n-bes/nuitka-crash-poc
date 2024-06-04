@@ -1,0 +1,454 @@
+= Nuitka. Memory problems.
+
+Originally crash was detect on big code base.
+I've research little bit and found two stable crashes on:
+
+- Reduced code base
+- Manually generated project (POC)
+
+
+== Reduced code base
+This crash triggered by `_unpackBlobConstants` and `DEEP_COPY_DICT` (full stacktrace below) on handle `dict<dict<str>>`.
+
+Environment based on `centos/stream8`, but unfortunately infrastructure is outdated at 31.05.2024
+(see https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/)
+
+[source, shell]
+----
+# python3 --version
+Python 3.6.8
+
+# nuitka3 --version
+1.6.5
+Commercial: None
+----
+
+
+My reproducible code contains:
+
+* module-build/__constants.c
+* module-build/__constants_data.c
+* nuitka-build/static_src/CompiledFunctionType.c
+* run.c
+
+
+Crashes detected by:
+
+- AddressSanitizer (amd64)
+- HWAddressSanitizer (arm64)
+
+While debug session i've also found that
+returned values from `_Nuitka_Py_PyDict_KeysSize` and `_Py_PyDict_KeysSize`
+(implementation copy-pasted from CPython) are not equal.
+
+
+[source, c]
+----
+// run.c
+
+Py_InitializeEx(0);
+if (!Py_IsInitialized()){
+    return 1;
+}
+
+// createGlobalConstants();
+loadConstantsBlob(&mod_consts[0], UNTRANSLATE("<module_name>"));
+
+PyObject * tmp_assign_source_8;
+tmp_assign_source_8 = DEEP_COPY_DICT(mod_consts[index]); // Crashed
+// tmp_assign_source_8 = PyDict_Copy(mod_consts[index]); // OK
+----
+
+Hope, stacktrace will be enough to reproduce bug on your side:
+[source, bash]
+----
+==90==ERROR: HWAddressSanitizer: tag-mismatch on address 0xedcdfffee600 at pc 0x000000471408
+READ of size 2216 at 0xedcdfffee600 tags: 8e/22 (ptr/mem) in thread T0
+Invalid access starting at offset 2208
+    #0 0x471408 in __hwasan_memcpy (/code/cmake-build/crash-nuitka+0x471408) (BuildId: 5e112bb6cd767fd8)
+    #1 0x500a64 in DEEP_COPY_DICT /code/nuitka-build/static_src/HelpersDictionariesGenerated.c:427:17
+    #2 0x74ce50 in main /code/run.c:115:35
+    #3 0xffffb7cc7380 in __libc_start_main (/lib64/libc.so.6+0x24380) (BuildId: 92e77281835bedb6debc1d395f45ffb93e438086)
+    #4 0x464388 in _start (/code/cmake-build/crash-nuitka+0x464388) (BuildId: 5e112bb6cd767fd8)
+
+[0xedcdfffee600,0xedcdfffef000) is a small allocated heap chunk; size: 2560 offset: 0
+
+Cause: heap-buffer-overflow
+0xedcdfffee600 is located 0 bytes inside a 2208-byte region [0xedcdfffee600,0xedcdfffeeea0)
+allocated by thread T0 here:
+    #0 0x46c980 in malloc (/code/cmake-build/crash-nuitka+0x46c980) (BuildId: 5e112bb6cd767fd8)
+    #1 0xffffb8079740  (/lib64/libpython3.6m.so.1.0+0xa3740) (BuildId: cbd0d20739018b41c810ab876db1c6937dd60cf8)
+    #2 0xffffb809eaac in _PyDict_NewPresized (/lib64/libpython3.6m.so.1.0+0xc8aac) (BuildId: cbd0d20739018b41c810ab876db1c6937dd60cf8)
+    #3 0x73dcb4 in _unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:566:27
+    #4 0x6b9364 in unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:1219:5
+    #5 0x6b8f00 in loadConstantsBlob /code/nuitka-build/static_src/HelpersConstantsBlob.c:1349:5
+    #6 0x74c99c in main /code/run.c:51:5
+    #7 0xffffb7cc7380 in __libc_start_main (/lib64/libc.so.6+0x24380) (BuildId: 92e77281835bedb6debc1d395f45ffb93e438086)
+    #8 0x464388 in _start (/code/cmake-build/crash-nuitka+0x464388) (BuildId: 5e112bb6cd767fd8)
+
+Thread: T0 0xeffe00002000 stack: [0xffffeb833000,0xffffec033000) sz: 8388608 tls: [0xffffb835b000,0xffffb835be50)
+Memory tags around the buggy address (one tag corresponds to 16 bytes):
+  0xedcdfffee600: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffee700: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffee800: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffee900: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffeea00: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffeeb00: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffeec00: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+  0xedcdfffeed00: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e  8e
+=>0xedcdfffeee00: 8e  8e  8e  8e  8e  8e  8e  8e  8e  8e [22] 22  22  22  22  7c
+  0xedcdfffeef00: 7c  7c  7c  7c  7c  7c  7c  7c  7c  7c  7c  00  00  00  00  00
+  0xedcdfffef000: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef100: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef200: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef300: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef400: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef500: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+  0xedcdfffef600: 64  64  64  64  64  64  64  64  64  64  64  64  64  64  64  64
+Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+  0xedcdfffeed00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+=>0xedcdfffeee00: ..  ..  ..  ..  ..  ..  ..  ..  ..  .. [..] ..  ..  ..  ..  ..
+  0xedcdfffeef00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+----
+
+
+
+
+
+
+== Manually generated project (POC)
+|==========
+| OS | Python version | Nuitka Version
+
+| Ubuntu 24.04
+| 3.12.3
+| 2.3
+
+| CentOS Stream 9
+| 3.9.18
+| 2.3
+|==========
+|==========
+| Image | Status
+
+| centos-stream9-env-without-nuitka
+| OK
+
+| centos-stream9-asan-env-without-nuitka
+| OK
+
+| centos-stream9-hwasan-env-without-nuitka
+| OK
+
+| centos-stream9-env-with-nuitka
+| OK
+
+| centos-stream9-asan-env-with-nuitka
+| OK
+
+| centos-stream9-hwasan-env-with-nuitka
+| FAILED
+
+| ubuntu-2404-env-without-nuitka
+| OK
+
+| ubuntu-2404-asan-env-without-nuitka
+| OK
+
+| ubuntu-2404-hwasan-env-without-nuitka
+| OK
+
+| ubuntu-2404-env-with-nuitka
+| OK
+
+| ubuntu-2404-asan-env-with-nuitka
+| OK
+
+| ubuntu-2404-hwasan-env-with-nuitka
+| FAILED
+
+|==========
+
+
+=== Output
+
+
+==== centos-stream9-env-without-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== centos-stream9-asan-env-without-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-asan-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== centos-stream9-hwasan-env-without-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-hwasan-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== centos-stream9-env-with-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-env-with-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== centos-stream9-asan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-asan-env-with-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== centos-stream9-hwasan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build centos-stream9-hwasan-env-with-nuitka
+----
+[source, text]
+----
+==1==ERROR: HWAddressSanitizer: tag-mismatch on address 0xffffa8bd1d30 at pc 0xffffa8b652e8
+WRITE of size 8 at 0xffffa8bd1d30 tags: f6/00 (ptr/mem) in thread T0
+    #0 0xffffa8b652e8 in PyInit_module /code/module.build/module.module.c:1108:26
+    #1 0xffffaabda118  (/lib64/libpython3.9.so.1.0+0x178118) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #2 0xffffaab2bc0c  (/lib64/libpython3.9.so.1.0+0xc9c0c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #3 0xffffaab21bd4 in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbfbd4) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #4 0xffffaab1b89c  (/lib64/libpython3.9.so.1.0+0xb989c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #5 0xffffaab2b5c8 in _PyFunction_Vectorcall (/lib64/libpython3.9.so.1.0+0xc95c8) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #6 0xffffaab20b9c in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbeb9c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #7 0xffffaab2b8cc  (/lib64/libpython3.9.so.1.0+0xc98cc) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #8 0xffffaab1d014 in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbb014) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #9 0xffffaab2b8cc  (/lib64/libpython3.9.so.1.0+0xc98cc) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #10 0xffffaab1cd6c in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbad6c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #11 0xffffaab2b8cc  (/lib64/libpython3.9.so.1.0+0xc98cc) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #12 0xffffaab1cd6c in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbad6c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #13 0xffffaab2b8cc  (/lib64/libpython3.9.so.1.0+0xc98cc) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #14 0xffffaab1cd6c in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbad6c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #15 0xffffaab2b8cc  (/lib64/libpython3.9.so.1.0+0xc98cc) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #16 0xffffaab2ac9c  (/lib64/libpython3.9.so.1.0+0xc8c9c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #17 0xffffaab374d8 in _PyObject_CallMethodIdObjArgs (/lib64/libpython3.9.so.1.0+0xd54d8) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #18 0xffffaab36ce8 in PyImport_ImportModuleLevelObject (/lib64/libpython3.9.so.1.0+0xd4ce8) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #19 0xffffaab1f718 in _PyEval_EvalFrameDefault (/lib64/libpython3.9.so.1.0+0xbd718) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #20 0xffffaab1b89c  (/lib64/libpython3.9.so.1.0+0xb989c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #21 0xffffaababc10 in _PyEval_EvalCodeWithName (/lib64/libpython3.9.so.1.0+0x149c10) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #22 0xffffaababb9c in PyEval_EvalCodeEx (/lib64/libpython3.9.so.1.0+0x149b9c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #23 0xffffaababb4c in PyEval_EvalCode (/lib64/libpython3.9.so.1.0+0x149b4c) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #24 0xffffaabe9a78  (/lib64/libpython3.9.so.1.0+0x187a78) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #25 0xffffaabe3f94  (/lib64/libpython3.9.so.1.0+0x181f94) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #26 0xffffaabdce48  (/lib64/libpython3.9.so.1.0+0x17ae48) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #27 0xffffaabdc5b0 in PyRun_SimpleFileExFlags (/lib64/libpython3.9.so.1.0+0x17a5b0) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #28 0xffffaabd7eec in Py_RunMain (/lib64/libpython3.9.so.1.0+0x175eec) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #29 0xffffaab99af8 in Py_BytesMain (/lib64/libpython3.9.so.1.0+0x137af8) (BuildId: b4d323fcb642de313fdd76880392bd99cc5d84d1)
+    #30 0xffffaa8cb2fc in __libc_start_call_main (/lib64/libc.so.6+0x272fc) (BuildId: fecda416df9bfa6291ced6294aa3c9fbb96b5f28)
+    #31 0xffffaa8cb3d4 in __libc_start_main@GLIBC_2.17 (/lib64/libc.so.6+0x273d4) (BuildId: fecda416df9bfa6291ced6294aa3c9fbb96b5f28)
+    #32 0xaaaaaf41082c in _start (/usr/bin/python3.9+0x82c) (BuildId: e583efae636cd09e0a7a456ea10767bd6deb55f0)
+
+Thread: T0 0xeffe00002000 stack: [0xffffe9945000,0xffffea145000) sz: 8388608 tls: [0xffffab88e020,0xffffab88ef60)
+HWAddressSanitizer can not describe address in more detail.
+Memory tags around the buggy address (one tag corresponds to 16 bytes):
+  0xffffa8bd1500: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1600: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1700: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1800: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1900: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1a00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1b00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1c00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+=>0xffffa8bd1d00: 00  00  00 [00] 00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1e00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd1f00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2000: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2100: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2200: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2300: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2400: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffffa8bd2500: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+  0xffffa8bd1c00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+=>0xffffa8bd1d00: ..  ..  .. [..] ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+  0xffffa8bd1e00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+Registers where the failure occurred (pc 0xffffa8b652e8):
+    x0  0000ffffaad9dab8  x1  0000000000000000  x2  0000ffffaad6a588  x3  00000000100c1400
+    x4  00000000000000e5  x5  0000000000000060  x6  0000000000000005  x7  0000ffffa8bea000
+    x8  0000ffffaa033520  x9  0000ffffab88e7e0  x10 0000ffffa8bda000  x11 00000000000101c0
+    x12 0000ffffa8bea210  x13 0000000000000005  x14 0000000000000000  x15 0000ffffaad61000
+    x16 0000ffffaadeaacc  x17 0000000000000007  x18 00000000000c0000  x19 0000ffffaa0334f0
+    x20 0200efff00000000  x21 f600ffffa8bd1d30  x22 0000ffffaa0334f0  x23 0000ffffa8be9e10
+    x24 0000ffffa8be68d0  x25 0000ffffa8b6529c  x26 0000ffffa8be6a90  x27 0000ffffaac73e88
+    x28 0000000000000000  x29 0000ffffea143700  x30 0000ffffa8b652ec   sp 0000ffffea143700
+SUMMARY: HWAddressSanitizer: tag-mismatch /code/module.build/module.module.c:1108:26 in PyInit_module
+----
+
+
+
+==== ubuntu-2404-env-without-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== ubuntu-2404-asan-env-without-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-asan-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== ubuntu-2404-hwasan-env-without-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-hwasan-env-without-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== ubuntu-2404-env-with-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-env-with-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== ubuntu-2404-asan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-asan-env-with-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+==== ubuntu-2404-hwasan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2404-hwasan-env-with-nuitka
+----
+[source, text]
+----
+==1==ERROR: HWAddressSanitizer: tag-mismatch on address 0xffff7ddf3bb0 at pc 0xffff7dc06ddc
+READ of size 8 at 0xffff7ddf3bb0 tags: f5/00 (ptr/mem) in thread T0
+    #0 0xffff7dc06ddc in PyInit_module /code/module.build/module.module.c:1123:26
+    #1 0x66def0 in _PyImport_LoadDynamicModuleWithSpec /usr/src/python3.12-3.12.3-1/build-static/../Python/importdl.c:169:9
+    #2 0x66d338 in _imp_create_dynamic_impl /usr/src/python3.12-3.12.3-1/build-static/../Python/import.c:3775:11
+    #3 0x66d338 in _imp_create_dynamic /usr/src/python3.12-3.12.3-1/build-static/../Python/clinic/import.c.h:506:20
+    #4 0x502d4c in cfunction_vectorcall_FASTCALL /usr/src/python3.12-3.12.3-1/build-static/../Objects/methodobject.c:422:24
+    #5 0x5652ac in _PyEval_EvalFrameDefault /usr/src/python3.12-3.12.3-1/build-static/Python/bytecodes.c:3254:26
+    #6 0x4c2f00 in _PyObject_VectorcallTstate /usr/src/python3.12-3.12.3-1/build-static/../Include/internal/pycore_call.h:92:11
+    #7 0x4c2f00 in object_vacall /usr/src/python3.12-3.12.3-1/build-static/../Objects/call.c:850:14
+    #8 0x4c4ae4 in PyObject_CallMethodObjArgs /usr/src/python3.12-3.12.3-1/build-static/../Objects/call.c:911:24
+    #9 0x58bee8 in import_find_and_load /usr/src/python3.12-3.12.3-1/build-static/../Python/import.c:2779:11
+    #10 0x58bee8 in PyImport_ImportModuleLevelObject /usr/src/python3.12-3.12.3-1/build-static/../Python/import.c:2862:15
+    #11 0x565f6c in import_name /usr/src/python3.12-3.12.3-1/build-static/../Python/ceval.c:2482:15
+    #12 0x565f6c in _PyEval_EvalFrameDefault /usr/src/python3.12-3.12.3-1/build-static/Python/bytecodes.c:2135:19
+    #13 0x560070 in _PyEval_EvalFrame /usr/src/python3.12-3.12.3-1/build-static/../Include/internal/pycore_ceval.h:89:16
+    #14 0x560070 in _PyEval_Vector /usr/src/python3.12-3.12.3-1/build-static/../Python/ceval.c:1683:12
+    #15 0x560070 in PyEval_EvalCode /usr/src/python3.12-3.12.3-1/build-static/../Python/ceval.c:578:21
+    #16 0x598f70 in run_eval_code_obj /usr/src/python3.12-3.12.3-1/build-static/../Python/pythonrun.c:1722:9
+    #17 0x598f70 in run_mod /usr/src/python3.12-3.12.3-1/build-static/../Python/pythonrun.c:1743:19
+    #18 0x67e6f0 in pyrun_file /usr/src/python3.12-3.12.3-1/build-static/../Python/pythonrun.c:1643:15
+    #19 0x67e2c4 in _PyRun_SimpleFileObject /usr/src/python3.12-3.12.3-1/build-static/../Python/pythonrun.c:433:13
+    #20 0x67e090 in _PyRun_AnyFileObject /usr/src/python3.12-3.12.3-1/build-static/../Python/pythonrun.c:78:15
+    #21 0x6890e8 in pymain_run_file_obj /usr/src/python3.12-3.12.3-1/build-static/../Modules/main.c:360:15
+    #22 0x6890e8 in pymain_run_file /usr/src/python3.12-3.12.3-1/build-static/../Modules/main.c:379:15
+    #23 0x6890e8 in pymain_run_python /usr/src/python3.12-3.12.3-1/build-static/../Modules/main.c:629:21
+    #24 0x6890e8 in Py_RunMain /usr/src/python3.12-3.12.3-1/build-static/../Modules/main.c:709:5
+    #25 0x688ca4 in Py_BytesMain /usr/src/python3.12-3.12.3-1/build-static/../Modules/main.c:763:12
+    #26 0xffff7fb384c0 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #27 0xffff7fb38594 in __libc_start_main csu/../csu/libc-start.c:360:3
+    #28 0x5f24ec in _start (/usr/bin/python3.12+0x5f24ec) (BuildId: 18160fe6beb052a7e6830ecc99e313a3498c377d)
+
+
+Thread: T0 0xeffe00002000 stack: [0xfffff1f19000,0xfffff2719000) sz: 8388608 tls: [0xffff808f1460,0xffff808f2320)
+
+Memory tags around the buggy address (one tag corresponds to 16 bytes):
+  0xffff7ddf3300: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3400: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3500: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3600: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3700: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3800: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3900: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3a00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+=>0xffff7ddf3b00: 00  00  00  00  00  00  00  00  00  00  00 [00] 00  00  00  00
+  0xffff7ddf3c00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3d00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3e00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf3f00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf4000: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf4100: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf4200: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+  0xffff7ddf4300: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+  0xffff7ddf3a00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+=>0xffff7ddf3b00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  .. [..] ..  ..  ..  ..
+  0xffff7ddf3c00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+
+Registers where the failure occurred (pc 0xffff7dc06ddc):
+    x0  0000000000b1a670  x1  0000ffff808f1bb0  x2  0000000000b266d8  x3  0000ffff7de09de0
+    x4  0000000000009d90  x5  0000000000b2d8d0  x6  ea00ef3dffffbef0  x7  0000ffff7db92060
+    x8  0000000000000000  x9  0000000000000000  x10 0000000000000000  x11 0000000000000000
+    x12 9100ed9dfffeba00  x13 0000000000000027  x14 000000000236fa65  x15 fffffffffffff000
+    x16 0000ffff7fe3b350  x17 0000000000000007  x18 0000000000000004  x19 0000000000b266b0
+    x20 0200efff00000000  x21 f500ffff7ddf3bb0  x22 00000000000000f5  x23 00000ffff7ddf3bb
+    x24 0000ffff7f0fa990  x25 000000000070f5b8  x26 0000ffff7dc06ac4  x27 0000ffff7f0fb920
+    x28 0000000000b8a278  x29 0000fffff2717e00  x30 0000ffff7dc06de0   sp 0000fffff2717e00
+SUMMARY: HWAddressSanitizer: tag-mismatch /code/module.build/module.module.c:1123:26 in PyInit_module
+----

@@ -1,0 +1,150 @@
+version: '3.4'
+
+services:
+  centos-stream9-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: centos-stream9-env
+    command: "python3 main.py"
+
+  centos-stream9-asan-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: centos-stream9-asan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/clang/17/lib/aarch64-redhat-linux-gnu/libclang_rt.asan.so"
+    command: "python3 main.py"
+
+  centos-stream9-hwasan-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: centos-stream9-hwasan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/clang/17/lib/aarch64-redhat-linux-gnu/libclang_rt.hwasan.so"
+    command: "python3 main.py"
+
+  centos-stream9-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: centos-stream9-env
+    command: "python3 main.py"
+
+  centos-stream9-asan-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: centos-stream9-asan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/clang/17/lib/aarch64-redhat-linux-gnu/libclang_rt.asan.so"
+    command: "python3 main.py"
+
+  centos-stream9-hwasan-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: centos-stream9-hwasan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/clang/17/lib/aarch64-redhat-linux-gnu/libclang_rt.hwasan.so"
+    command: "python3 main.py"
+
+
+  ubuntu-2404-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: ubuntu-2404-env
+    command: "python3 main.py"
+
+  ubuntu-2404-asan-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: ubuntu-2404-asan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-aarch64.so"
+    command: "python3 main.py"
+
+  ubuntu-2404-hwasan-env-without-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: without-nuitka
+      args:
+        ENV: ubuntu-2404-hwasan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.hwasan-aarch64.so"
+    command: "python3 main.py"
+
+  ubuntu-2404-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: ubuntu-2404-env
+    command: "python3 main.py"
+
+  ubuntu-2404-asan-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: ubuntu-2404-asan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-aarch64.so"
+    command: "python3 main.py"
+
+  ubuntu-2404-hwasan-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: ubuntu-2404-hwasan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.hwasan-aarch64.so"
+    command: "python3 main.py"
+
+
+  # LD_PRELOAD: "/usr/lib/llvm-10/lib/clang/10.0.0/lib/linux/libclang_rt.hwasan-aarch64.so"
