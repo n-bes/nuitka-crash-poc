@@ -1,7 +1,7 @@
 = Nuitka. Memory problems.
 
-Originally crash was detect on big code base.
-I've research little bit and found two stable crashes on:
+Originally crash was detected on big code base.
+I've researched little bit and found two stable crashes on:
 
 - Reduced code base
 - Manually generated project (POC)
@@ -10,7 +10,7 @@ I've research little bit and found two stable crashes on:
 == Reduced code base
 This crash triggered by `_unpackBlobConstants` and `DEEP_COPY_DICT` (full stacktrace below) on handle `dict<dict<str>>`.
 
-Environment based on `centos/stream8`, but unfortunately infrastructure is outdated at 31.05.2024
+Environment based on `centos/stream8`, but unfortunately infrastructure is outdated on 31.05.2024
 (see https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/)
 
 [source, shell]
@@ -37,7 +37,7 @@ Crashes detected by:
 - AddressSanitizer (amd64)
 - HWAddressSanitizer (arm64)
 
-While debug session i've also found that
+While debugging session I've also found that
 returned values from `_Nuitka_Py_PyDict_KeysSize` and `_Py_PyDict_KeysSize`
 (implementation copy-pasted from CPython) are not equal.
 
@@ -59,7 +59,7 @@ tmp_assign_source_8 = DEEP_COPY_DICT(mod_consts[index]); // Crashed
 // tmp_assign_source_8 = PyDict_Copy(mod_consts[index]); // OK
 ----
 
-Hope, stacktrace will be enough to reproduce bug on your side:
+Hope, stacktrace will be enough to reproduce the bug on your side:
 [source, bash]
 ----
 ==90==ERROR: HWAddressSanitizer: tag-mismatch on address 0xedcdfffee600 at pc 0x000000471408
