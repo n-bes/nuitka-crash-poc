@@ -10,19 +10,8 @@ I've researched little bit and found two stable crashes on:
 == Reduced code base
 This crash triggered by `_unpackBlobConstants` and `DEEP_COPY_DICT` (full stacktrace below) on handle `dict<dict<str>>`.
 
-Environment based on `centos/stream8`, but unfortunately infrastructure is outdated on 31.05.2024
+Environment based on `centos/stream8` and `ubuntu:18.04`, but unfortunately CentOS infrastructure is outdated on 31.05.2024
 (see https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/)
-
-[source, shell]
-----
-# python3 --version
-Python 3.6.8
-
-# nuitka3 --version
-1.6.5
-Commercial: None
-----
-
 
 My reproducible code contains:
 
@@ -60,6 +49,19 @@ tmp_assign_source_8 = DEEP_COPY_DICT(mod_consts[index]); // Crashed
 ----
 
 Hope, stacktrace will be enough to reproduce the bug on your side:
+
+
+=== centos stream 8
+[source, shell]
+----
+# python3 --version
+Python 3.6.8
+
+# nuitka3 --version
+1.6.5
+Commercial: None
+----
+
 [source, bash]
 ----
 ==90==ERROR: HWAddressSanitizer: tag-mismatch on address 0xedcdfffee600 at pc 0x000000471408
@@ -111,10 +113,78 @@ Tags for short granules around the buggy address (one tag corresponds to 16 byte
   0xedcdfffeef00: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
 ----
 
+=== ubuntu 18.04
+[source, shell]
+----
+nuitka3 --version
+1.6.5
+Commercial: None
+Python: 3.6.9 (default, Mar 10 2023, 16:46:00)
+Flavor: Debian Python
+Executable: /usr/bin/python3
+OS: Linux
+Arch: aarch64
+Distribution: Ubuntu (based on Debian) 18.04.6
+Version C compiler: /usr/bin/gcc (gcc).
+----
+
+[source, shell]
+----
+==22==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x51d00001e920 at pc 0xaaaab53edf48 bp 0xffffff971280 sp 0xffffff970a70
+
+READ of size 2216 at 0x51d00001e920 thread T0
+    #0 0xaaaab53edf44 in __asan_memcpy (/code/cmake-build/crash-nuitka+0x39df44) (BuildId: f53aebe4f7e8c1cf)
+    #1 0xaaaab549ad64 in DEEP_COPY_DICT /code/nuitka-build/static_src/HelpersDictionariesGenerated.c:427:17
+    #2 0xaaaab57116e0 in main /code/run.c:115:35
+    #3 0xffffa453579c in __libc_start_main /build/glibc-L0whdJ/glibc-2.27/csu/../csu/libc-start.c:310
+    #4 0xaaaab5350360 in _start (/code/cmake-build/crash-nuitka+0x300360) (BuildId: f53aebe4f7e8c1cf)
 
 
 
 
+0x51d00001e920 is located 0 bytes after 2208-byte region [0x51d00001e080,0x51d00001e920)
+allocated by thread T0 here:
+    #0 0xaaaab53eff94 in malloc (/code/cmake-build/crash-nuitka+0x39ff94) (BuildId: f53aebe4f7e8c1cf)
+    #1 0xffffa49de3cc in _PyObject_Alloc build-shared/../Objects/obmalloc.c:1446:22
+    #2 0xffffa49de3cc in _PyObject_Malloc build-shared/../Objects/obmalloc.c:1456:12
+    #3 0xffffa49f0a8c in new_keys_object build-shared/../Objects/dictobject.c:537:14
+    #4 0xffffa49f0b2c in _PyDict_NewPresized build-shared/../Objects/dictobject.c:1386:16
+    #5 0xaaaab5700eb4 in _unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:566:27
+    #6 0xaaaab566bd00 in unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:1219:5
+    #7 0xaaaab566b74c in loadConstantsBlob /code/nuitka-build/static_src/HelpersConstantsBlob.c:1349:5
+    #8 0xaaaab5710f58 in main /code/run.c:51:5
+    #9 0xffffa453579c in __libc_start_main /build/glibc-L0whdJ/glibc-2.27/csu/../csu/libc-start.c:310
+    #10 0xaaaab5350360 in _start (/code/cmake-build/crash-nuitka+0x300360) (BuildId: f53aebe4f7e8c1cf)
+----
+
+[source, shell]
+----
+==11==ERROR: HWAddressSanitizer: tag-mismatch on address 0xedcdfffedc00 at pc 0xaaaad5f3340c
+READ of size 2216 at 0xedcdfffedc00 tags: 17/87 (ptr/mem) in thread T0
+Invalid access starting at offset 2208
+    #0 0xaaaad5f3340c in __hwasan_memcpy (/code/cmake-build/crash-nuitka+0x27340c) (BuildId: 8ace36754df69c33)
+    #1 0xaaaad5fc121c in DEEP_COPY_DICT /code/nuitka-build/static_src/HelpersDictionariesGenerated.c:427:17
+    #2 0xaaaad620932c in main /code/run.c:115:35
+    #3 0xffffbd31479c in __libc_start_main /build/glibc-L0whdJ/glibc-2.27/csu/../csu/libc-start.c:310
+    #4 0xaaaad5f26618 in _start (/code/cmake-build/crash-nuitka+0x266618) (BuildId: 8ace36754df69c33)
+
+[0xedcdfffedc00,0xedcdfffee600) is a small allocated heap chunk; size: 2560 offset: 0
+
+Cause: heap-buffer-overflow
+0xedcdfffedc00 is located 0 bytes inside a 2208-byte region [0xedcdfffedc00,0xedcdfffee4a0)
+allocated by thread T0 here:
+    #0 0xaaaad5f2eb6c in malloc (/code/cmake-build/crash-nuitka+0x26eb6c) (BuildId: 8ace36754df69c33)
+    #1 0xffffbd7bd3cc in _PyObject_Alloc build-shared/../Objects/obmalloc.c:1446:22
+    #2 0xffffbd7bd3cc in _PyObject_Malloc build-shared/../Objects/obmalloc.c:1456:12
+    #3 0xffffbd7cfa8c in new_keys_object build-shared/../Objects/dictobject.c:537:14
+    #4 0xffffbd7cfb2c in _PyDict_NewPresized build-shared/../Objects/dictobject.c:1386:16
+    #5 0xaaaad61fa2bc in _unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:566:27
+    #6 0xaaaad6176b04 in unpackBlobConstants /code/nuitka-build/static_src/HelpersConstantsBlob.c:1219:5
+    #7 0xaaaad61766a0 in loadConstantsBlob /code/nuitka-build/static_src/HelpersConstantsBlob.c:1349:5
+    #8 0xaaaad6208e84 in main /code/run.c:51:5
+    #9 0xffffbd31479c in __libc_start_main /build/glibc-L0whdJ/glibc-2.27/csu/../csu/libc-start.c:310
+    #10 0xaaaad5f26618 in _start (/code/cmake-build/crash-nuitka+0x266618) (BuildId: 8ace36754df69c33)
+----
 
 == Manually generated project (POC)
 |==========
