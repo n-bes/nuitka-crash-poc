@@ -62,6 +62,42 @@ ENV LDFLAGS="-fsanitize=hwaddress -fuse-ld=lld -g"
 
 
 
+FROM ubuntu:22.04 as ubuntu-2204-env
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y \
+    && apt-get install -y \
+        cmake \
+        python3 \
+        python3-dbg \
+        python3-pip \
+        lsb-release \
+        wget \
+        software-properties-common \
+        gnupg
+RUN wget https://apt.llvm.org/llvm.sh \
+    && chmod +x llvm.sh \
+    && ./llvm.sh 19 \
+    && ln -s /usr/bin/lld-19 /usr/local/bin/lld \
+    && ln -s /usr/bin/clang-19 /usr/local/bin/clang
+ENV CC=clang
+RUN pip3 install nuitka==2.3
+
+
+
+FROM ubuntu-2204-env as ubuntu-2204-asan-env
+ENV CFLAGS="-fsanitize=address -fuse-ld=lld -g"
+ENV CCFLAGS="-fsanitize=address -fuse-ld=lld -g"
+ENV LDFLAGS="-fsanitize=address -fuse-ld=lld -g"
+
+
+
+FROM ubuntu-2204-env as ubuntu-2204-hwasan-env
+ENV CFLAGS="-fsanitize=hwaddress -fuse-ld=lld -g"
+ENV CCFLAGS="-fsanitize=hwaddress -fuse-ld=lld -g"
+ENV LDFLAGS="-fsanitize=hwaddress -fuse-ld=lld -g"
+
+
+
 FROM ubuntu:24.04 as ubuntu-2404-env
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y \

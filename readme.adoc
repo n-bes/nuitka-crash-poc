@@ -219,6 +219,12 @@ allocated by thread T0 here:
 | centos-stream9-hwasan-env-with-nuitka
 | FAILED
 
+| ubuntu-2204-asan-env-with-nuitka
+| OK
+
+| ubuntu-2204-hwasan-env-with-nuitka
+| FAILED
+
 | ubuntu-2404-env-without-nuitka
 | OK
 
@@ -380,6 +386,137 @@ Registers where the failure occurred (pc 0xffffa8b652e8):
     x20 0200efff00000000  x21 f600ffffa8bd1d30  x22 0000ffffaa0334f0  x23 0000ffffa8be9e10
     x24 0000ffffa8be68d0  x25 0000ffffa8b6529c  x26 0000ffffa8be6a90  x27 0000ffffaac73e88
     x28 0000000000000000  x29 0000ffffea143700  x30 0000ffffa8b652ec   sp 0000ffffea143700
+SUMMARY: HWAddressSanitizer: tag-mismatch /code/module.build/module.module.c:1108:26 in PyInit_module
+----
+
+
+==== ubuntu-2204-asan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2204-asan-env-with-nuitka
+----
+[source, text]
+----
+{'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
+----
+
+
+
+
+==== ubuntu-2204-hwasan-env-with-nuitka
+[source, bash]
+----
+docker compose run --build ubuntu-2204-hwasan-env-with-nuitka
+----
+[source, text]
+----
+==10==ERROR: HWAddressSanitizer: tag-mismatch on address 0xffff8c2af2e0 at pc 0xffff8c09dc14
+WRITE of size 8 at 0xffff8c2af2e0 tags: f6/00 (ptr/mem) in thread T0
+#0 0xffff8c09dc14 in PyInit_module /code/module.build/module.module.c:1108:26
+#1 0xaaaacd85c378 in _PyImport_LoadDynamicModuleWithSpec /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/importdl.c:167:9
+#2 0xaaaacd85c378 in _imp_create_dynamic_impl /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/import.c:2050:11
+#3 0xaaaacd85c378 in _imp_create_dynamic /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/clinic/import.c.h:330:20
+#4 0xaaaacd745598 in cfunction_vectorcall_FASTCALL /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/methodobject.c:430:24
+#5 0xaaaacd72ed8c in do_call_core /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5945:12
+#6 0xaaaacd72ed8c in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4277:22
+#7 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#8 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#9 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#10 0xaaaacd731778 in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#11 0xaaaacd731778 in PyObject_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:123:12
+#12 0xaaaacd731778 in call_function /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5893:13
+#13 0xaaaacd731778 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4181:23
+#14 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#15 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#16 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#17 0xaaaacd72d3f4 in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#18 0xaaaacd72d3f4 in PyObject_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:123:12
+#19 0xaaaacd72d3f4 in call_function /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5893:13
+#20 0xaaaacd72d3f4 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4198:23
+#21 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#22 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#23 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#24 0xaaaacd72d2b8 in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#25 0xaaaacd72d2b8 in PyObject_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:123:12
+#26 0xaaaacd72d2b8 in call_function /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5893:13
+#27 0xaaaacd72d2b8 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4213:19
+#28 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#29 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#30 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#31 0xaaaacd72d2b8 in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#32 0xaaaacd72d2b8 in PyObject_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:123:12
+#33 0xaaaacd72d2b8 in call_function /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5893:13
+#34 0xaaaacd72d2b8 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4213:19
+#35 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#36 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#37 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#38 0xaaaacd72d2b8 in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#39 0xaaaacd72d2b8 in PyObject_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:123:12
+#40 0xaaaacd72d2b8 in call_function /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5893:13
+#41 0xaaaacd72d2b8 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:4213:19
+#42 0xaaaacd745344 in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#43 0xaaaacd745344 in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#44 0xaaaacd745344 in _PyFunction_Vectorcall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:342:16
+#45 0xaaaacd74426c in _PyObject_VectorcallTstate /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/cpython/abstract.h:114:11
+#46 0xaaaacd74426c in object_vacall /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:734:14
+#47 0xaaaacd830ee4 in _PyObject_CallMethodIdObjArgs /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Objects/call.c:825:24
+#48 0xaaaacd75a7d4 in import_find_and_load /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/import.c:1522:11
+#49 0xaaaacd75a7d4 in PyImport_ImportModuleLevelObject /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/import.c:1623:15
+#50 0xaaaacd72f7a8 in import_name /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:6018:15
+#51 0xaaaacd72f7a8 in _PyEval_EvalFrameDefault /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:3695:19
+#52 0xaaaacd82975c in _PyEval_EvalFrame /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Include/internal/pycore_ceval.h:46:12
+#53 0xaaaacd82975c in _PyEval_Vector /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:5067:24
+#54 0xaaaacd8295e0 in PyEval_EvalCode /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/ceval.c:1134:12
+#55 0xaaaacd85ccb8 in run_eval_code_obj /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/pythonrun.c:1291:9
+#56 0xaaaacd8553c4 in run_mod /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/pythonrun.c:1312:19
+#57 0xaaaacd85c968 in pyrun_file /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/pythonrun.c:1208:15
+#58 0xaaaacd85bad0 in _PyRun_SimpleFileObject /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/pythonrun.c:456:13
+#59 0xaaaacd85b69c in _PyRun_AnyFileObject /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Python/pythonrun.c:90:15
+#60 0xaaaacd84bfbc in pymain_run_file_obj /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Modules/main.c:353:15
+#61 0xaaaacd84bfbc in pymain_run_file /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Modules/main.c:372:15
+#62 0xaaaacd84bfbc in pymain_run_python /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Modules/main.c:587:21
+#63 0xaaaacd84bfbc in Py_RunMain /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Modules/main.c:666:5
+#64 0xaaaacd81a744 in Py_BytesMain /build/python3.10-SBPMZM/python3.10-3.10.12/build-static/../Modules/main.c:720:12
+#65 0xffff8dfc73f8 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+#66 0xffff8dfc74c8 in __libc_start_main csu/../csu/libc-start.c:392:3
+#67 0xaaaacd81a62c in _start (/usr/bin/python3.10+0x1da62c) (BuildId: 07fde82f379fc594bdc2a0381c75c41956b1f307)
+
+
+Thread: T0 0xeffe00002000 stack: [0xffffdde64000,0xffffde664000) sz: 8388608 tls: [0xffff8ed3c440,0xffff8ed3d380)
+
+Memory tags around the buggy address (one tag corresponds to 16 bytes):
+0xffff8c2aea00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2aeb00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2aec00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2aed00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2aee00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2aef00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af000: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af100: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+=>0xffff8c2af200: 00  00  00  00  00  00  00  00  00  00  00  00  00  00 [00] 00
+0xffff8c2af300: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af400: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af500: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af600: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af700: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af800: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2af900: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+0xffff8c2afa00: 00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
+Tags for short granules around the buggy address (one tag corresponds to 16 bytes):
+0xffff8c2af100: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+=>0xffff8c2af200: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  .. [..] ..
+0xffff8c2af300: ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+See https://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html#short-granules for a description of short granule tags
+
+Registers where the failure occurred (pc 0xffff8c09dc14):
+x0  0000ffff8d59ea60  x1  0000000000000000  x2  0000aaaacdb7f948  x3  0000000010481500
+x4  00000000000000e5  x5  0000000000000060  x6  0000000000000082  x7  0000aaaacd7083e0
+x8  0000ffff8d59ea60  x9  0000000000000000  x10 00000000000000f6  x11 0000aaaacdbb81d0
+x12 0000ffff8c338000  x13 5300ffff8c3c0000  x14 0000000000003fff  x15 cb00ef3dfffe0000
+x16 0000ffff8e28a97c  x17 0000000000000007  x18 000000000003a880  x19 0000ffff8d59ea30
+x20 0200efff00000000  x21 f600ffff8c2af2e0  x22 0000ffff8d59ea30  x23 0000ffff8c32b210
+x24 0000ffff8c317850  x25 0000ffff8c09d718  x26 0000aaaacdbf8208  x27 0000000000000000
+x28 0000ffff8d59ea60  x29 0000ffffde661bc0  x30 0000ffff8c09dc18   sp 0000ffffde661bc0
 SUMMARY: HWAddressSanitizer: tag-mismatch /code/module.build/module.module.c:1108:26 in PyInit_module
 ----
 
