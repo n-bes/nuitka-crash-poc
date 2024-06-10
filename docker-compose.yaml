@@ -171,5 +171,31 @@ services:
       LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.hwasan-aarch64.so"
     command: "python3 main.py"
 
+  ubuntu-2404-asan-factory-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: ubuntu-2404-factory-asan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.asan-aarch64.so"
+    command: "python3 main.py"
+
+  ubuntu-2404-hwasan-factory-env-with-nuitka:
+    platform: linux/arm64
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: with-nuitka
+      args:
+        ENV: ubuntu-2404-factory-hwasan-env
+    environment:
+      LSAN_OPTIONS: "detect_leaks=0"
+      HWASAN_OPTIONS: "random_tags=0:print_stats=1:verbosity=1"
+      LD_PRELOAD: "/usr/lib/llvm-18/lib/clang/18/lib/linux/libclang_rt.hwasan-aarch64.so"
+    command: "python3 main.py"
 
   # LD_PRELOAD: "/usr/lib/llvm-10/lib/clang/10.0.0/lib/linux/libclang_rt.hwasan-aarch64.so"
