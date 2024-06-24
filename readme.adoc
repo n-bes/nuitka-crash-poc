@@ -574,6 +574,12 @@ docker compose run --build ubuntu-2404-env-with-nuitka
 {'level_1': {'key_1': 'value_1'}, 'level_2': {'key_2': 'value_2'}, 'level_3': {'key_3': 'value_3'}}
 ----
 
+SAST report (svace 3.4.240516):
+[source, text]
+----
+include::ubuntu-2404-env-with-nuitka/svace/nuitka-poc-svace.txt[]
+----
+
 
 
 ==== ubuntu-2404-asan-env-with-nuitka
