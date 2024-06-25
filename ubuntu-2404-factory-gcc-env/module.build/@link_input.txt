@@ -1,0 +1,7 @@
+"./__constants.os"
+"./__constants_data.os"
+"./__helpers.os"
+"./__loader.os"
+"./module.module.os"
+"./module.module.consts.os"
+"./static_src/CompiledFunctionType.os"

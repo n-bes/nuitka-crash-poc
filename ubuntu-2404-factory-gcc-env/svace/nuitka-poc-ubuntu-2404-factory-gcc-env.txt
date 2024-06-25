@@ -1,0 +1,209 @@
+[BUFFER_OVERFLOW]
+  BUFFER_SIZE_MISMATCH: 27
+[DEAD_CODE]
+  UNREACHABLE_CODE: 8
+  UNREACHABLE_CODE.ENUM: 2
+[DEREF_OF_NULL]
+  DEREF_OF_NULL.COND: 1
+  DEREF_OF_NULL.EX: 11
+  DEREF_OF_NULL.RET: 3
+  DEREF_OF_NULL.RET.STAT: 2
+[LEAKS]
+  HANDLE_LEAK.EX: 1
+[NEGATIVE]
+  NEGATIVE_CODE_ERROR.EX: 1
+[TAINTED]
+  TAINTED_PTR: 3
+  TAINTED_PTR.MIGHT: 1
+[UAST]
+  SIMILAR_BRANCHES: 6
+[USE_AFTER_RELEASE]
+  DOUBLE_CLOSE.PROC: 1
+[OTHER]
+  PROC_USE.VULNERABLE: 3
+  PROC_USE.VULNERABLE.GETENV: 2
+Total warnings: 72
+
+Number of analyzed source code lines: 289401
+Warning density (per million lines of code): 248.79
+
+
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:1735 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:1735
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:1806 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:1806
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9370 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:9370
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:2573 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:2573
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:2644 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:2644
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9629 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:9629
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:3411 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:3411
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:3482 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:3482
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9888 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:9888
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:4249 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4249
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:4320 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4320
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10147 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:10147
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5087 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5087
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5158 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5158
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10406 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:10406
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5925 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5925
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5996 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5996
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10665 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:10665
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:6763 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:6763
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:6834 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:6834
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10924 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:10924
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:7601 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:7601
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:7672 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:7672
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:11183 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:11183
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:8439 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:8439
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:8510 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:8510
+* BUFFER_SIZE_MISMATCH: Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:11442 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.
+    Variable 'args' is passed to function 'memcpy' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:11442
+* DEREF_OF_NULL.COND: Pointer '0', which has a NULL value at module.module.c:245, is passed as 10th parameter in call to function 'Nuitka_Function_New' at module.module.c:245, where it may be dereferenced at CompiledFunctionType.c:1280.
+    [dereference] Variable '0' is passed to function 'Nuitka_Function_New' as 10th parameter at /code/module.build/module.module.c:245
+    [null] Null constant at /code/module.build/module.module.c:245
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:661, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:679, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:679
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:661
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:1519, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:1537, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:1537
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:1519
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:2357, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:2375, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:2375
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:2357
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:3195, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:3213, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:3213
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:3195
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:4033, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:4051, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4051
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4033
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:4871, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:4889, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4889
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:4871
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:5709, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:5727, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5727
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:5709
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:6547, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:6565, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:6565
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:6547
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:7385, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:7403, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:7403
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:7385
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersCallingGenerated.c:8223, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:8241, where it is dereferenced at object.h:700.
+    [dereference] Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:8241
+    [assignment] Possible assignment of null value to 'pos_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c:8223
+* DEREF_OF_NULL.EX: After having been assigned to a NULL value at HelpersMatching.c:23, pointer 'match_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersMatching.c:133, where it is dereferenced at object.h:700.
+    [dereference] Variable 'match_args' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersMatching.c:133
+    [assignment] Possible assignment of null value to 'match_args' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersMatching.c:23
+* DEREF_OF_NULL.RET: Pointer 'list_str', returned from function 'UNICODE_CONCAT' at CompiledFunctionType.c:1509, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at CompiledFunctionType.c:1548, where it is dereferenced at object.h:700.
+    [dereference] Variable 'list_str' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c:1548
+    [possible null] Null constant at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersStrings.c:691
+* DEREF_OF_NULL.RET: Pointer 'list_str', returned from function 'UNICODE_CONCAT' at CompiledFunctionType.c:1638, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at CompiledFunctionType.c:1677, where it is dereferenced at object.h:700.
+    [dereference] Variable 'list_str' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c:1677
+    [possible null] Null constant at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersStrings.c:691
+* DEREF_OF_NULL.RET: Pointer 'package_name', returned from function 'LOOKUP_ATTRIBUTE' at MetaPathBasedLoader.c:918, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at MetaPathBasedLoader.c:929, where it is dereferenced at object.h:700.
+    [dereference] Variable 'package_name' is passed to function 'Py_DECREF' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:929
+    [possible null] Null constant at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersAttributes.c:236
+* DEREF_OF_NULL.RET.STAT: Return value of a function 'LOOKUP_ATTRIBUTE' is dereferenced at MetaPathBasedLoader.c:929 without checking for NULL, but it is usually checked for this function (18/19).
+    [dereference] Dereference at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:929
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:1191
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:1021
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /code/module.build/module.module.c:715
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /code/module.build/module.module.c:698
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /code/module.build/module.module.c:663
+    [counter-example] counter-example: LOOKUP_ATTRIBUTE at /code/module.build/module.module.c:646
+* DEREF_OF_NULL.RET.STAT: Return value of a function 'Nuitka_LongFromCLong' is dereferenced at HelpersConstantsBlob.c:662 without checking for NULL, but it is usually checked for this function (4/5).
+    [dereference] Dereference at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersConstantsBlob.c:662
+    [counter-example] counter-example: Nuitka_LongFromCLong at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:2403
+    [counter-example] counter-example: Nuitka_LongFromCLong at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:1241
+    [counter-example] counter-example: Nuitka_LongFromCLong at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:942
+    [counter-example] counter-example: Nuitka_LongFromCLong at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:637
+* DOUBLE_CLOSE.PROC: Handler 'mapped_file.file_handle' is passed to a function at HelpersFilesystemPaths.c:486 by calling function 'unmapFileFromMemory' at HelpersFilesystemPaths.c:503 after the handler is closed again at HelpersFilesystemPaths.c:450 by calling function 'mapFileToMemory' at HelpersFilesystemPaths.c:491.
+    [pass to func] Call of 'unmapFileFromMemory' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:503
+    [close] Call of 'mapFileToMemory' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:491
+* HANDLE_LEAK.EX: The handle 'handle' is created at MetaPathBasedLoader.c:778 by calling function 'dlopen' and lost at MetaPathBasedLoader.c:836.
+    [acquire] Call of 'dlopen' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:778
+    [leaked] leak at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c:836
+* NEGATIVE_CODE_ERROR.EX: Variable 'mapped_file.file_size', which might receive a negative value at HelpersFilesystemPaths.c:440 by calling function 'mapFileToMemory' at HelpersFilesystemPaths.c:491, is used without checking at HelpersFilesystemPaths.c:485 by calling function 'unmapFileFromMemory' at HelpersFilesystemPaths.c:503.
+    [value use] Call of 'unmapFileFromMemory' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:503
+    [error code] Call of 'mapFileToMemory' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:491
+    [assign] assign at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:491
+* PROC_USE.VULNERABLE: Use of vulnerable function 'strcat' at HelpersSafeStrings.c:57. This function is unsafe, use strncat instead.
+    function call at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:57
+* PROC_USE.VULNERABLE: Use of vulnerable function 'strcpy' at HelpersSafeStrings.c:28. This function is unsafe, use strncpy instead.
+    function call at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:28
+* PROC_USE.VULNERABLE: Use of vulnerable function 'vsprintf' at CompiledCodeHelpers.c:881. This function is unsafe, use vsnprintf instead.
+    function call at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCodeHelpers.c:881
+* PROC_USE.VULNERABLE.GETENV: Use of vulnerable function 'getenv' at HelpersEnvironmentVariablesSystem.c:57. System's environment variable can be controlled externally. Please use tzplatform_getenv() or use secure storage instead of getenv()
+    function call at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersEnvironmentVariablesSystem.c:57
+* PROC_USE.VULNERABLE.GETENV: Use of vulnerable function 'getenv' at HelpersFilesystemPaths.c:933. System's environment variable can be controlled externally. Please use tzplatform_getenv() or use secure storage instead of getenv()
+    function call at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:933
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:2959
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:3364
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:3749
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:4136
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:4140
+* SIMILAR_BRANCHES: identical expressions on both sides of logical operator
+    identical expressions on both sides of logical operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c:4984
+* TAINTED_PTR: Variable 'source' is obtained from an untrusted source at HelpersSafeStrings.c:53. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by calling function 'strcat'. Please double check if input string is properly validated in error-prone manner
+    [vulnerable operation] Variable 'source' is passed to function 'strcat' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:57
+    [tainted pointer] Parameter 'source' of function 'appendStringSafe' is tainted at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:53
+* TAINTED_PTR: Variable 'target' is obtained from an untrusted source at HelpersSafeStrings.c:57. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by calling function 'strcat'. Please double check if input string is properly validated in error-prone manner
+    [vulnerable operation] Variable 'target' is passed to function 'strcat' as 1st parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:57
+    [tainted pointer] Variable 'target' gets tainted value by Append  value from variable 'source' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c:57
+* TAINTED_PTR: Variable 'xdg_cache_home' is obtained from an untrusted source at HelpersFilesystemPaths.c:979 by calling function 'getenv'. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by passing as 2nd parameter to function 'appendStringSafe' at HelpersFilesystemPaths.c:982. Please double check if input string is properly validated in error-prone manner
+    [vulnerable operation] Variable 'xdg_cache_home' is passed to function 'appendStringSafe' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:982
+    [tainted pointer] Call of 'getenv' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:979
+* TAINTED_PTR.MIGHT: Variable 'home_path' is obtained from an untrusted source at HelpersFilesystemPaths.c:961 by calling function 'getenv'. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by passing as 2nd parameter to function 'appendStringSafe' at HelpersFilesystemPaths.c:976. Please double check if input string is properly validated in error-prone manner
+    [vulnerable operation] Variable 'home_path' is passed to function 'appendStringSafe' as 2nd parameter at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:976
+    [tainted pointer] Call of 'getenv' at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c:961
+* UNREACHABLE_CODE: The condition in ternary operator is always true at HelpersComparisonGe.c:364.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonGe.c:364
+* UNREACHABLE_CODE: The condition in ternary operator is always true at HelpersComparisonLe.c:364.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonLe.c:364
+* UNREACHABLE_CODE: The condition in ternary operator is always true at HelpersComparisonEq.c:365.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c:365
+* UNREACHABLE_CODE: The condition in ternary operator is always true at HelpersComparisonNe.c:9534.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c:9534
+* UNREACHABLE_CODE: The condition in ternary operator is always true at HelpersComparisonNe.c:10930.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c:10930
+* UNREACHABLE_CODE: The condition in ternary operator is always false at HelpersComparisonNe.c:364.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c:364
+* UNREACHABLE_CODE: The condition in ternary operator is always false at HelpersComparisonEq.c:9623.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c:9623
+* UNREACHABLE_CODE: The condition in ternary operator is always false at HelpersComparisonEq.c:11018.
+    ternary operator at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c:11018
+* UNREACHABLE_CODE.ENUM: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledGeneratorTypeUncompiledIntegration.c:155
+    [[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable.] [enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable. at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledGeneratorTypeUncompiledIntegration.c:152
+* UNREACHABLE_CODE.ENUM: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCoroutineType.c:608
+    [[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable.] [enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable. at /usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCoroutineType.c:605

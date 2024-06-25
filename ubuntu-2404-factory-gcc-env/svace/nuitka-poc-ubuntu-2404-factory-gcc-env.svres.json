@@ -1,0 +1,2786 @@
+{
+  "PROJ_NAME" : "nuitka-poc-ubuntu-2404-factory-gcc-env",
+  "PROJ_DIR" : "/code",
+  "WARNS" : [ {
+    "WARN_ID" : 1000,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 1735,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS2",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS2",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=16;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:1735 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 1735,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1001,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 1806,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS2",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS2",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=16;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:1806 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 1806,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1002,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 9370,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS2_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS2_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=16;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9370 by calling function 'memcpy' with a size parameter that is always equal to 16. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 9370,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1003,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 2573,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS3",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS3",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=24;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:2573 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 2573,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1004,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 2644,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS3",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS3",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=24;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:2644 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 2644,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1005,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 9629,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS3_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS3_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=24;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9629 by calling function 'memcpy' with a size parameter that is always equal to 24. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 9629,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1006,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 3411,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS4",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS4",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=32;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:3411 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 3411,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1007,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 3482,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS4",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS4",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=32;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:3482 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 3482,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1008,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 9888,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS4_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS4_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=32;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:9888 by calling function 'memcpy' with a size parameter that is always equal to 32. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 9888,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1009,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 4249,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS5",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS5",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=40;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:4249 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4249,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1010,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 4320,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS5",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS5",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=40;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:4320 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4320,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1011,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 10147,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS5_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS5_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=40;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10147 by calling function 'memcpy' with a size parameter that is always equal to 40. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 10147,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1012,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 5087,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS6",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS6",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=48;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5087 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5087,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1013,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 5158,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS6",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS6",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=48;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5158 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5158,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1014,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 10406,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS6_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS6_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=48;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10406 by calling function 'memcpy' with a size parameter that is always equal to 48. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 10406,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1015,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 5925,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS7",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS7",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=56;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5925 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5925,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1016,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 5996,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS7",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS7",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=56;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:5996 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5996,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1017,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 10665,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS7_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS7_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=56;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10665 by calling function 'memcpy' with a size parameter that is always equal to 56. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 10665,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1018,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 6763,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS8",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS8",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=64;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:6763 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 6763,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1019,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 6834,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS8",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS8",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=64;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:6834 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 6834,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1020,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 10924,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS8_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS8_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=64;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:10924 by calling function 'memcpy' with a size parameter that is always equal to 64. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 10924,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1021,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 7601,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS9",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS9",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=72;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:7601 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 7601,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1022,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 7672,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS9",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS9",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=72;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:7672 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 7672,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1023,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 11183,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS9_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS9_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=72;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:11183 by calling function 'memcpy' with a size parameter that is always equal to 72. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 11183,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1024,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 8439,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS10",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS10",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=80;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:8439 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 8439,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1025,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 8510,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS10",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS10",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=80;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:8510 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 8510,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1026,
+    "WARN_CLASS" : "BUFFER_SIZE_MISMATCH",
+    "TAGS" : "",
+    "MTID" : "SvEng.BO.SM.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 11442,
+    "FUNC" : "CALL_FUNCTION_WITH_POSARGS10_KWSPLIT",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_POSARGS10_KWSPLIT",
+    "DETAILS" : "'args';8;memcpy;'memcpy';=80;",
+    "MSG" : "Pointer 'args', referencing a memory location of size 8 bytes, is passed as a parameter to function 'memcpy' at HelpersCallingGenerated.c:11442 by calling function 'memcpy' with a size parameter that is always equal to 80. This can lead to a buffer overflow.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "buffer access",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 11442,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'args' is passed to function 'memcpy' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 430,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1027,
+    "WARN_CLASS" : "DEREF_OF_NULL.COND",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.20",
+    "FILE" : "/code/module.build/module.module.c",
+    "LINE" : 245,
+    "FUNC" : "MAKE_FUNCTION_module$$$function__1_print_variable",
+    "ORIG_FUNC" : "MAKE_FUNCTION_module$$$function__1_print_variable",
+    "DETAILS" : "'0';10th;Nuitka_Function_New;",
+    "MSG" : "Pointer '0', which has a NULL value at module.module.c:245, is passed as 10th parameter in call to function 'Nuitka_Function_New' at module.module.c:245, where it may be dereferenced at CompiledFunctionType.c:1280.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 245,
+        "COL" : 44,
+        "IS_SPEC" : false,
+        "INFO" : "Variable '0' is passed to function 'Nuitka_Function_New' as 10th parameter"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+        "LINE" : 1280,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "closure is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "null",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 245,
+        "COL" : 44,
+        "IS_SPEC" : false,
+        "INFO" : "Null constant"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1028,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 679,
+    "FUNC" : "CALL_FUNCTION_WITH_SINGLE_ARG",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_SINGLE_ARG",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:661, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:679, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 679,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 661,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1029,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 1537,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS2",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS2",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:1519, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:1537, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 1537,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 1519,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1030,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 2375,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS3",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS3",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:2357, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:2375, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 2375,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 2357,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1031,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 3213,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS4",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS4",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:3195, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:3213, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 3213,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 3195,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1032,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 4051,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS5",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS5",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:4033, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:4051, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4051,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4033,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1033,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 4889,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS6",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS6",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:4871, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:4889, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4889,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 4871,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1034,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 5727,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS7",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS7",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:5709, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:5727, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5727,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 5709,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1035,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 6565,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS8",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS8",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:6547, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:6565, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 6565,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 6547,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1036,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 7403,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS9",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS9",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:7385, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:7403, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 7403,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 7385,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1037,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+    "LINE" : 8241,
+    "FUNC" : "CALL_FUNCTION_WITH_ARGS10",
+    "ORIG_FUNC" : "CALL_FUNCTION_WITH_ARGS10",
+    "DETAILS" : "pos_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersCallingGenerated.c:8223, pointer 'pos_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersCallingGenerated.c:8241, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 8241,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'pos_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersCallingGenerated.c",
+        "LINE" : 8223,
+        "COL" : 23,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'pos_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1038,
+    "WARN_CLASS" : "DEREF_OF_NULL.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersMatching.c",
+    "LINE" : 133,
+    "FUNC" : "MATCH_CLASS_ARGS",
+    "ORIG_FUNC" : "MATCH_CLASS_ARGS",
+    "DETAILS" : "match_args;1st;Py_DECREF;",
+    "MSG" : "After having been assigned to a NULL value at HelpersMatching.c:23, pointer 'match_args' is passed as 1st parameter in call to function 'Py_DECREF' at HelpersMatching.c:133, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersMatching.c",
+        "LINE" : 133,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'match_args' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "assignment",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersMatching.c",
+        "LINE" : 23,
+        "COL" : 15,
+        "IS_SPEC" : false,
+        "INFO" : "Possible assignment of null value to 'match_args'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1039,
+    "WARN_CLASS" : "DEREF_OF_NULL.RET",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.8",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+    "LINE" : 1548,
+    "FUNC" : "formatErrorTooFewArguments",
+    "ORIG_FUNC" : "formatErrorTooFewArguments",
+    "DETAILS" : "'list_str';UNICODE_CONCAT;1st;Py_DECREF;",
+    "MSG" : "Pointer 'list_str', returned from function 'UNICODE_CONCAT' at CompiledFunctionType.c:1509, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at CompiledFunctionType.c:1548, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+        "LINE" : 1548,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'list_str' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "possible null",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersStrings.c",
+        "LINE" : 691,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Null constant"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+        "LINE" : 1509,
+        "COL" : 28,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'UNICODE_CONCAT'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1040,
+    "WARN_CLASS" : "DEREF_OF_NULL.RET",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.8",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+    "LINE" : 1677,
+    "FUNC" : "formatErrorTooFewKwOnlyArguments",
+    "ORIG_FUNC" : "formatErrorTooFewKwOnlyArguments",
+    "DETAILS" : "'list_str';UNICODE_CONCAT;1st;Py_DECREF;",
+    "MSG" : "Pointer 'list_str', returned from function 'UNICODE_CONCAT' at CompiledFunctionType.c:1638, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at CompiledFunctionType.c:1677, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+        "LINE" : 1677,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'list_str' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "possible null",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersStrings.c",
+        "LINE" : 691,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Null constant"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledFunctionType.c",
+        "LINE" : 1638,
+        "COL" : 28,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'UNICODE_CONCAT'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1041,
+    "WARN_CLASS" : "DEREF_OF_NULL.RET",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.8",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+    "LINE" : 929,
+    "FUNC" : "callIntoExtensionModule",
+    "ORIG_FUNC" : "callIntoExtensionModule",
+    "DETAILS" : "'package_name';LOOKUP_ATTRIBUTE;1st;Py_DECREF;",
+    "MSG" : "Pointer 'package_name', returned from function 'LOOKUP_ATTRIBUTE' at MetaPathBasedLoader.c:918, may be NULL and is passed as 1st parameter in call to function 'Py_DECREF' at MetaPathBasedLoader.c:929, where it is dereferenced at object.h:700.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 929,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'package_name' is passed to function 'Py_DECREF' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'op' is passed to function '_Py_IsImmortal' as 1st parameter"
+      }, {
+        "FILE" : "/usr/include/python3.12/object.h",
+        "LINE" : 242,
+        "COL" : 12,
+        "IS_SPEC" : false,
+        "INFO" : "op is dereferenced here."
+      } ]
+    }, {
+      "ROLE" : "possible null",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersAttributes.c",
+        "LINE" : 236,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Null constant"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 918,
+        "COL" : 38,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'LOOKUP_ATTRIBUTE'"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1042,
+    "WARN_CLASS" : "DEREF_OF_NULL.RET.STAT",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.21",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+    "LINE" : 929,
+    "FUNC" : "callIntoExtensionModule",
+    "ORIG_FUNC" : "callIntoExtensionModule",
+    "DETAILS" : "LOOKUP_ATTRIBUTE;",
+    "MSG" : "Return value of a function 'LOOKUP_ATTRIBUTE' is dereferenced at MetaPathBasedLoader.c:929 without checking for NULL, but it is usually checked for this function (18/19).",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 929,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Dereference"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 918,
+        "COL" : 38,
+        "IS_SPEC" : false,
+        "INFO" : "LOOKUP_ATTRIBUTE"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 1191,
+        "COL" : 29,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 1192,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 1021,
+        "COL" : 28,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 1023,
+        "COL" : 20,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 715,
+        "COL" : 25,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 717,
+        "COL" : 8,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 698,
+        "COL" : 37,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 705,
+        "COL" : 8,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 663,
+        "COL" : 24,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 665,
+        "COL" : 7,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 646,
+        "COL" : 36,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: LOOKUP_ATTRIBUTE"
+      }, {
+        "FILE" : "/code/module.build/module.module.c",
+        "LINE" : 653,
+        "COL" : 7,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1043,
+    "WARN_CLASS" : "DEREF_OF_NULL.RET.STAT",
+    "TAGS" : "",
+    "MTID" : "SvEng.ND.21",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersConstantsBlob.c",
+    "LINE" : 662,
+    "FUNC" : "_unpackBlobConstant",
+    "ORIG_FUNC" : "_unpackBlobConstant",
+    "DETAILS" : "Nuitka_LongFromCLong;",
+    "MSG" : "Return value of a function 'Nuitka_LongFromCLong' is dereferenced at HelpersConstantsBlob.c:662 without checking for NULL, but it is usually checked for this function (4/5).",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "dereference",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersConstantsBlob.c",
+        "LINE" : 662,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Dereference"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersConstantsBlob.c",
+        "LINE" : 660,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "Nuitka_LongFromCLong"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 2403,
+        "COL" : 29,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: Nuitka_LongFromCLong"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 2466,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 1241,
+        "COL" : 33,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: Nuitka_LongFromCLong"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 1304,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 942,
+        "COL" : 33,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: Nuitka_LongFromCLong"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 1005,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    }, {
+      "ROLE" : "counter-example",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 637,
+        "COL" : 29,
+        "IS_SPEC" : false,
+        "INFO" : "counter-example: Nuitka_LongFromCLong"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 700,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Check for NULL"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1044,
+    "WARN_CLASS" : "DOUBLE_CLOSE.PROC",
+    "TAGS" : "",
+    "MTID" : "SvEng.UR.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+    "LINE" : 503,
+    "FUNC" : "getFileCRC32",
+    "ORIG_FUNC" : "getFileCRC32",
+    "DETAILS" : "'mapped_file.file_handle';unmapFileFromMemory;mapFileToMemory;",
+    "MSG" : "Handler 'mapped_file.file_handle' is passed to a function at HelpersFilesystemPaths.c:486 by calling function 'unmapFileFromMemory' at HelpersFilesystemPaths.c:503 after the handler is closed again at HelpersFilesystemPaths.c:450 by calling function 'mapFileToMemory' at HelpersFilesystemPaths.c:491.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "pass to func",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 503,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'unmapFileFromMemory'"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 486,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'mapped_file->file_handle' is passed to function 'close' as 1st parameter"
+      }, {
+        "FILE" : "/svace/tests/library/unistd.c",
+        "LINE" : 127,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : "free"
+      } ]
+    }, {
+      "ROLE" : "close",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 491,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'mapFileToMemory'"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 450,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'result->file_handle' is passed to function 'close' as 1st parameter"
+      }, {
+        "FILE" : "/svace/tests/library/unistd.c",
+        "LINE" : 127,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : "free"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1045,
+    "WARN_CLASS" : "HANDLE_LEAK.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.RL.20",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+    "LINE" : 778,
+    "FUNC" : "callIntoExtensionModule",
+    "ORIG_FUNC" : "callIntoExtensionModule",
+    "DETAILS" : "'handle';'dlopen';",
+    "MSG" : "The handle 'handle' is created at MetaPathBasedLoader.c:778 by calling function 'dlopen' and lost at MetaPathBasedLoader.c:836.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "acquire",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 778,
+        "COL" : 20,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'dlopen'"
+      }, {
+        "FILE" : "/svace/tests/library/dlfcn.c",
+        "LINE" : 19,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : "Create"
+      } ]
+    }, {
+      "ROLE" : "leaked",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 836,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "leak"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 780,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "(handle == 0) ^ 1 ^ 1 == 0"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 794,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "entrypoint != 0"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/MetaPathBasedLoader.c",
+        "LINE" : 831,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "(module == 0) ^ 1 ^ 1 != 0"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1046,
+    "WARN_CLASS" : "NEGATIVE_CODE_ERROR.EX",
+    "TAGS" : "",
+    "MTID" : "SvEng.NE.33",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+    "LINE" : 503,
+    "FUNC" : "getFileCRC32",
+    "ORIG_FUNC" : "getFileCRC32",
+    "DETAILS" : "'mapped_file.file_size';mapFileToMemory;unmapFileFromMemory;",
+    "MSG" : "Variable 'mapped_file.file_size', which might receive a negative value at HelpersFilesystemPaths.c:440 by calling function 'mapFileToMemory' at HelpersFilesystemPaths.c:491, is used without checking at HelpersFilesystemPaths.c:485 by calling function 'unmapFileFromMemory' at HelpersFilesystemPaths.c:503.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "value use",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 503,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'unmapFileFromMemory'"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 485,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'mapped_file->file_size' is passed to function 'munmap' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/mman.c",
+        "LINE" : 20,
+        "COL" : 2,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    }, {
+      "ROLE" : "error code",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 491,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'mapFileToMemory'"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 440,
+        "COL" : 26,
+        "IS_SPEC" : false,
+        "INFO" : "Assign the negative value to variable 'result->file_size'"
+      } ]
+    }, {
+      "ROLE" : "assign",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 491,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "assign"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1047,
+    "WARN_CLASS" : "PROC_USE.VULNERABLE",
+    "TAGS" : "",
+    "MTID" : "SvEng.L.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+    "LINE" : 57,
+    "FUNC" : "appendStringSafe",
+    "ORIG_FUNC" : "appendStringSafe",
+    "DETAILS" : "strcat;",
+    "MSG" : "Use of vulnerable function 'strcat' at HelpersSafeStrings.c:57. This function is unsafe, use strncat instead.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "function call",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1048,
+    "WARN_CLASS" : "PROC_USE.VULNERABLE",
+    "TAGS" : "",
+    "MTID" : "SvEng.L.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+    "LINE" : 28,
+    "FUNC" : "copyStringSafe",
+    "ORIG_FUNC" : "copyStringSafe",
+    "DETAILS" : "strcpy;",
+    "MSG" : "Use of vulnerable function 'strcpy' at HelpersSafeStrings.c:28. This function is unsafe, use strncpy instead.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "function call",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 28,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1049,
+    "WARN_CLASS" : "PROC_USE.VULNERABLE",
+    "TAGS" : "",
+    "MTID" : "SvEng.L.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCodeHelpers.c",
+    "LINE" : 881,
+    "FUNC" : "PRINT_FORMAT",
+    "ORIG_FUNC" : "PRINT_FORMAT",
+    "DETAILS" : "vsprintf;",
+    "MSG" : "Use of vulnerable function 'vsprintf' at CompiledCodeHelpers.c:881. This function is unsafe, use vsnprintf instead.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "function call",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCodeHelpers.c",
+        "LINE" : 881,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1050,
+    "WARN_CLASS" : "PROC_USE.VULNERABLE.GETENV",
+    "TAGS" : "",
+    "MTID" : "SvEng.L.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersEnvironmentVariablesSystem.c",
+    "LINE" : 57,
+    "FUNC" : "getEnvironmentVariable",
+    "ORIG_FUNC" : "getEnvironmentVariable",
+    "DETAILS" : "getenv;",
+    "MSG" : "Use of vulnerable function 'getenv' at HelpersEnvironmentVariablesSystem.c:57. System's environment variable can be controlled externally. Please use tzplatform_getenv() or use secure storage instead of getenv()",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "function call",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersEnvironmentVariablesSystem.c",
+        "LINE" : 57,
+        "COL" : 77,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1051,
+    "WARN_CLASS" : "PROC_USE.VULNERABLE.GETENV",
+    "TAGS" : "",
+    "MTID" : "SvEng.L.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+    "LINE" : 933,
+    "FUNC" : "expandTemplatePath",
+    "ORIG_FUNC" : "expandTemplatePath",
+    "DETAILS" : "getenv;",
+    "MSG" : "Use of vulnerable function 'getenv' at HelpersFilesystemPaths.c:933. System's environment variable can be controlled externally. Please use tzplatform_getenv() or use secure storage instead of getenv()",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "function call",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 933,
+        "COL" : 39,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 961,
+        "COL" : 41,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 979,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "function call"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1052,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 2959,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_UNICODE_UNICODE(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_UNICODE_UNICODE",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 2959,
+        "COL" : 55,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 2959,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 2959,
+        "COL" : 58,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1053,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 3364,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_BYTES_BYTES(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_BYTES_BYTES",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3364,
+        "COL" : 15,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3364,
+        "COL" : 13,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3364,
+        "COL" : 18,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1054,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 3749,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_TUPLE_TUPLE(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_TUPLE_TUPLE",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3749,
+        "COL" : 11,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3749,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 3749,
+        "COL" : 14,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1055,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 4136,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_LIST_LIST(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_LIST_LIST",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4136,
+        "COL" : 11,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4136,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4136,
+        "COL" : 14,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1056,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 4140,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_LIST_LIST(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_LIST_LIST",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4140,
+        "COL" : 11,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4140,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4140,
+        "COL" : 14,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1057,
+    "WARN_CLASS" : "SIMILAR_BRANCHES",
+    "TAGS" : "",
+    "MTID" : "CSA.SIMILAR_BRANCHES.6",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+    "LINE" : 4984,
+    "FUNC" : "bool _INPLACE_OPERATION_ADD_LIST_TUPLE(PyObject **, PyObject *)",
+    "ORIG_FUNC" : "_INPLACE_OPERATION_ADD_LIST_TUPLE",
+    "DETAILS" : "4ca757fc110f003c1dadda917ecb4221a73dbc78",
+    "MSG" : "identical expressions on both sides of logical operator",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "CSA",
+    "TRACES" : [ {
+      "ROLE" : "",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4984,
+        "COL" : 11,
+        "IS_SPEC" : false,
+        "INFO" : "identical expressions on both sides of logical operator"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4984,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "Range"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersOperationInplaceAdd.c",
+        "LINE" : 4984,
+        "COL" : 14,
+        "IS_SPEC" : false,
+        "INFO" : "Use of identical expressions"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1058,
+    "WARN_CLASS" : "TAINTED_PTR",
+    "TAGS" : "",
+    "MTID" : "SvEng.T.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+    "LINE" : 57,
+    "FUNC" : "appendStringSafe",
+    "ORIG_FUNC" : "appendStringSafe",
+    "DETAILS" : "'source';'strcat';",
+    "MSG" : "Variable 'source' is obtained from an untrusted source at HelpersSafeStrings.c:53. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by calling function 'strcat'. Please double check if input string is properly validated in error-prone manner",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "vulnerable operation",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'source' is passed to function 'strcat' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 21,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    }, {
+      "ROLE" : "tainted pointer",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 53,
+        "COL" : 29,
+        "IS_SPEC" : false,
+        "INFO" : "Parameter 'source' of function 'appendStringSafe' is tainted"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 982,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "call"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 979,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "tainted"
+      }, {
+        "FILE" : "/svace/tests/library/stdlib.c",
+        "LINE" : 137,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1059,
+    "WARN_CLASS" : "TAINTED_PTR",
+    "TAGS" : "",
+    "MTID" : "SvEng.T.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+    "LINE" : 57,
+    "FUNC" : "appendStringSafe",
+    "ORIG_FUNC" : "appendStringSafe",
+    "DETAILS" : "'target';'strcat';",
+    "MSG" : "Variable 'target' is obtained from an untrusted source at HelpersSafeStrings.c:57. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by calling function 'strcat'. Please double check if input string is properly validated in error-prone manner",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "vulnerable operation",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'target' is passed to function 'strcat' as 1st parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 20,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    }, {
+      "ROLE" : "tainted pointer",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'target' gets tainted value by Append  value from variable 'source'"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 53,
+        "COL" : 29,
+        "IS_SPEC" : false,
+        "INFO" : "Parameter 'source' of function 'appendStringSafe' is tainted"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 982,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "call"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 979,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "tainted"
+      }, {
+        "FILE" : "/svace/tests/library/stdlib.c",
+        "LINE" : 137,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1060,
+    "WARN_CLASS" : "TAINTED_PTR",
+    "TAGS" : "",
+    "MTID" : "SvEng.T.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+    "LINE" : 982,
+    "FUNC" : "expandTemplatePath",
+    "ORIG_FUNC" : "expandTemplatePath",
+    "DETAILS" : "'xdg_cache_home';'getenv';2nd;appendStringSafe;",
+    "MSG" : "Variable 'xdg_cache_home' is obtained from an untrusted source at HelpersFilesystemPaths.c:979 by calling function 'getenv'. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by passing as 2nd parameter to function 'appendStringSafe' at HelpersFilesystemPaths.c:982. Please double check if input string is properly validated in error-prone manner",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "vulnerable operation",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 982,
+        "COL" : 21,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'xdg_cache_home' is passed to function 'appendStringSafe' as 2nd parameter"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'source' is passed to function 'strcat' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 21,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    }, {
+      "ROLE" : "tainted pointer",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 979,
+        "COL" : 46,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'getenv'"
+      }, {
+        "FILE" : "/svace/tests/library/stdlib.c",
+        "LINE" : 137,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1061,
+    "WARN_CLASS" : "TAINTED_PTR.MIGHT",
+    "TAGS" : "",
+    "MTID" : "SvEng.T.1",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+    "LINE" : 976,
+    "FUNC" : "expandTemplatePath",
+    "ORIG_FUNC" : "expandTemplatePath",
+    "DETAILS" : "'home_path';'getenv';2nd;appendStringSafe;",
+    "MSG" : "Variable 'home_path' is obtained from an untrusted source at HelpersFilesystemPaths.c:961 by calling function 'getenv'. The variable is used in a vulnerable operation at HelpersSafeStrings.c:57 by passing as 2nd parameter to function 'appendStringSafe' at HelpersFilesystemPaths.c:976. Please double check if input string is properly validated in error-prone manner",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "vulnerable operation",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 976,
+        "COL" : 17,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'home_path' is passed to function 'appendStringSafe' as 2nd parameter"
+      }, {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersSafeStrings.c",
+        "LINE" : 57,
+        "COL" : 5,
+        "IS_SPEC" : false,
+        "INFO" : "Variable 'source' is passed to function 'strcat' as 2nd parameter"
+      }, {
+        "FILE" : "/svace/tests/library/string.cpp",
+        "LINE" : 21,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    }, {
+      "ROLE" : "tainted pointer",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersFilesystemPaths.c",
+        "LINE" : 961,
+        "COL" : 41,
+        "IS_SPEC" : false,
+        "INFO" : "Call of 'getenv'"
+      }, {
+        "FILE" : "/svace/tests/library/stdlib.c",
+        "LINE" : 137,
+        "COL" : 5,
+        "IS_SPEC" : true,
+        "INFO" : ""
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1062,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonGe.c",
+    "LINE" : 364,
+    "FUNC" : "RICH_COMPARE_GE_NBOOL_OBJECT_OBJECT",
+    "ORIG_FUNC" : "RICH_COMPARE_GE_NBOOL_OBJECT_OBJECT",
+    "DETAILS" : "true;",
+    "MSG" : "The condition in ternary operator is always true at HelpersComparisonGe.c:364.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonGe.c",
+        "LINE" : 364,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1063,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonLe.c",
+    "LINE" : 364,
+    "FUNC" : "RICH_COMPARE_LE_NBOOL_OBJECT_OBJECT",
+    "ORIG_FUNC" : "RICH_COMPARE_LE_NBOOL_OBJECT_OBJECT",
+    "DETAILS" : "true;",
+    "MSG" : "The condition in ternary operator is always true at HelpersComparisonLe.c:364.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonLe.c",
+        "LINE" : 364,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1064,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+    "LINE" : 365,
+    "FUNC" : "RICH_COMPARE_EQ_NBOOL_OBJECT_OBJECT",
+    "ORIG_FUNC" : "RICH_COMPARE_EQ_NBOOL_OBJECT_OBJECT",
+    "DETAILS" : "true;",
+    "MSG" : "The condition in ternary operator is always true at HelpersComparisonEq.c:365.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+        "LINE" : 365,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1065,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+    "LINE" : 9534,
+    "FUNC" : "COMPARE_NE_NBOOL_TUPLE_TUPLE",
+    "ORIG_FUNC" : "COMPARE_NE_NBOOL_TUPLE_TUPLE",
+    "DETAILS" : "true;",
+    "MSG" : "The condition in ternary operator is always true at HelpersComparisonNe.c:9534.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+        "LINE" : 9534,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1066,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+    "LINE" : 10930,
+    "FUNC" : "COMPARE_NE_NBOOL_LIST_LIST",
+    "ORIG_FUNC" : "COMPARE_NE_NBOOL_LIST_LIST",
+    "DETAILS" : "true;",
+    "MSG" : "The condition in ternary operator is always true at HelpersComparisonNe.c:10930.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+        "LINE" : 10930,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1067,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+    "LINE" : 364,
+    "FUNC" : "RICH_COMPARE_NE_NBOOL_OBJECT_OBJECT",
+    "ORIG_FUNC" : "RICH_COMPARE_NE_NBOOL_OBJECT_OBJECT",
+    "DETAILS" : "false;",
+    "MSG" : "The condition in ternary operator is always false at HelpersComparisonNe.c:364.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonNe.c",
+        "LINE" : 364,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1068,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+    "LINE" : 9623,
+    "FUNC" : "COMPARE_EQ_NBOOL_TUPLE_TUPLE",
+    "ORIG_FUNC" : "COMPARE_EQ_NBOOL_TUPLE_TUPLE",
+    "DETAILS" : "false;",
+    "MSG" : "The condition in ternary operator is always false at HelpersComparisonEq.c:9623.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+        "LINE" : 9623,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1069,
+    "WARN_CLASS" : "UNREACHABLE_CODE",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.5",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+    "LINE" : 11018,
+    "FUNC" : "COMPARE_EQ_NBOOL_LIST_LIST",
+    "ORIG_FUNC" : "COMPARE_EQ_NBOOL_LIST_LIST",
+    "DETAILS" : "false;",
+    "MSG" : "The condition in ternary operator is always false at HelpersComparisonEq.c:11018.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "ternary operator",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/HelpersComparisonEq.c",
+        "LINE" : 11018,
+        "COL" : 30,
+        "IS_SPEC" : false,
+        "INFO" : "ternary operator"
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1070,
+    "WARN_CLASS" : "UNREACHABLE_CODE.ENUM",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledGeneratorTypeUncompiledIntegration.c",
+    "LINE" : 155,
+    "FUNC" : "Nuitka_PyGen_Send",
+    "ORIG_FUNC" : "Nuitka_PyGen_Send",
+    "DETAILS" : "glob;",
+    "MSG" : "This statement in the source code might be unreachable during program execution.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "unreachable",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledGeneratorTypeUncompiledIntegration.c",
+        "LINE" : 155,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "unreachable"
+      } ]
+    }, {
+      "ROLE" : "[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable.",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledGeneratorTypeUncompiledIntegration.c",
+        "LINE" : 152,
+        "COL" : 0,
+        "IS_SPEC" : false,
+        "INFO" : "[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable."
+      } ]
+    } ]
+  }, {
+    "WARN_ID" : 1071,
+    "WARN_CLASS" : "UNREACHABLE_CODE.ENUM",
+    "TAGS" : "",
+    "MTID" : "SvEng.UNR.7",
+    "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCoroutineType.c",
+    "LINE" : 608,
+    "FUNC" : "_Nuitka_Coroutine_send",
+    "ORIG_FUNC" : "_Nuitka_Coroutine_send",
+    "DETAILS" : "glob;",
+    "MSG" : "This statement in the source code might be unreachable during program execution.",
+    "STATUS" : "Default",
+    "COMMENT" : "",
+    "LANG" : "C_Cpp",
+    "TOOL" : "SvEng",
+    "TRACES" : [ {
+      "ROLE" : "unreachable",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCoroutineType.c",
+        "LINE" : 608,
+        "COL" : 9,
+        "IS_SPEC" : false,
+        "INFO" : "unreachable"
+      } ]
+    }, {
+      "ROLE" : "[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable.",
+      "LOCS" : [ {
+        "FILE" : "/usr/local/lib/python3.12/dist-packages/nuitka/build/static_src/CompiledCoroutineType.c",
+        "LINE" : 605,
+        "COL" : 0,
+        "IS_SPEC" : false,
+        "INFO" : "[enum] All possible enum items were listed in the switch instruction so the 'default' label is unreachable."
+      } ]
+    } ]
+  } ]
+}

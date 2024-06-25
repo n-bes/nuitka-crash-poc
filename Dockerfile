@@ -146,6 +146,22 @@ RUN pip3 install -U --force-reinstall --break-system-packages "https://github.co
 
 
 
+FROM ubuntu:24.04 as ubuntu-2404-factory-gcc-env
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y \
+    && apt-get install -y \
+      gcc \
+      cmake \
+      lld \
+      lldb \
+      llvm \
+      python3-dev \
+      python3-pip \
+      python3-dbg
+RUN pip3 install -U --force-reinstall --break-system-packages "https://github.com/Nuitka/Nuitka/archive/factory.zip"
+
+
+
 FROM ubuntu-2404-factory-env as ubuntu-2404-factory-asan-env
 ENV CFLAGS="-fsanitize=address -fuse-ld=lld -g"
 ENV CCFLAGS="-fsanitize=address -fuse-ld=lld -g"
